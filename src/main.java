@@ -6,6 +6,9 @@ public class main {
         System.out.print("Введите длину маршрута: ");
         int length = in.nextInt();
         test.setLength(length);
-        test.printRoute();
+        System.out.print("Введите max вершину: ");
+        int max_height = in.nextInt();
+        test.setMax_height(max_height);
+        
     }
 }

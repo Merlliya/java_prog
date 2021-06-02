@@ -51,4 +51,23 @@ public class Climber {
         System.out.print(route[0] + " ");
         System.out.print(route[1] + " ");
         difference = Math.abs(max-min);
+        for (int i = 2; i < length; i++) { // Границы высоты следующей вершины
+            int a = negative(min, difference3_step - difference);
+            int b = positive(max, difference3_step - difference);
+            // (difference3_step - difference) - дисперсия относительно max & min
+            route[i] = Math.round((float)Math.random() * (b - a) + a);
+
+            if (route[i-1] > route[i]) {  // Поиск min & max двух соседних вершин
+                max = route[i-1];
+                min = route[i];
+            }
+            else {
+                max = route[i];
+                min = route[i-1];
+            }
+            difference = Math.abs(max-min);
+            System.out.print(route[i] + " ");
+        }
+    }
+
 }
