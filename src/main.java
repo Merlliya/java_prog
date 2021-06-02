@@ -9,6 +9,10 @@ public class main {
         System.out.print("Введите max вершину: ");
         int max_height = in.nextInt();
         test.setMax_height(max_height);
-        
+        System.out.print("Введите max перепад 3 ближайших вершин: ");
+        int step = in.nextInt();
+        test.setDifference3_step(step);
+        test.printRoute();
+        in.close();
     }
 }

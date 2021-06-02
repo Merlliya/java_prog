@@ -69,5 +69,19 @@ public class Climber {
             System.out.print(route[i] + " ");
         }
     }
-
+    private int positive (int max_f, int diff) { // Если границы смещаются за max вершиной, то ограничить max вершиной
+        if (max_f+diff > max_height) {
+            return max_height;
+        }
+        else
+            return max_f+diff;
+    }
+    private int negative (int min_f, int diff) { // Если границы смещаются в (<0) то ограничить 0
+        if (min_f-diff < 0) {
+            return 0;
+        }
+        else
+            return min_f-diff;
+    }
+    public Climber() {}
 }
